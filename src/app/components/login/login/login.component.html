@@ -1,0 +1,34 @@
+<mat-toolbar class="login-toolbar" color="primary">Expense Tracker</mat-toolbar>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 col-sm-12 offset-sm-0">
+            <mat-card>
+                <mat-card-content>
+                    <mat-divider></mat-divider>
+                    <form [formGroup]="formLogin" #formDirective="ngForm" (ngSubmit)="onSubmit()">
+                        <mat-form-field>
+                            <mat-icon matPrefix>email</mat-icon>
+                            <input autofocus type="email" matInput placeholder="Correo Electrónico" formControlName="email">
+                            <mat-hint style="color: red;" *ngIf="errorLogin">Credenciales incorrectas</mat-hint>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <mat-icon matPrefix>lock_outline</mat-icon>
+                            <input type="password" autocomplete="false" matInput placeholder="Password"  formControlName="password">
+                            <mat-hint style="color: red;" *ngIf="errorLogin">Credenciales incorrectas</mat-hint>
+                        </mat-form-field>
+                        <br>
+                        <div style="display:flex; justify-content: center;">
+                            <button type="submit" mat-raised-button color="primary">Entrar</button>
+                        </div>
+                        <br>
+                    </form>
+                    <mat-card-actions align="end">
+                        <button mat-button routerLink="/registro">Registrarse</button>
+                        <button mat-button (click)="onGoogleLogin()">Entrar con Google</button>
+                    </mat-card-actions>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

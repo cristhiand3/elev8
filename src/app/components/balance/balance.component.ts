@@ -31,12 +31,12 @@ export class BalanceComponent implements OnInit{
 
   calculo() {
     this.total = 0
-      for(let i of this.gastoList) {
-        this.total -= i.valor;
-      }
-      for(let i of this.presupuestoList) {
-        this.total += i.monto;
-      }
+    for(let i of this.gastoList) {
+      this.total -= i.valor;
+    }
+    for(let i of this.presupuestoList) {
+      this.total += i.monto;
+    }
   }
 
 }

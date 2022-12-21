@@ -15,6 +15,8 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { PrincipalComponent } from './components/principal/principal.component';
+import { LoginComponent } from './components/login/login/login.component';
+import { RegisterComponent } from './components/login/register/register.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -23,6 +25,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select'
 import { MatIconModule } from '@angular/material/icon'
 import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card'
+import { MatDividerModule } from '@angular/material/divider'
 
 
 @NgModule({
@@ -32,7 +36,9 @@ import { MatTableModule } from '@angular/material/table';
     GastoComponent,
     CategoriaComponent,
     PrincipalComponent,
-    BalanceComponent
+    BalanceComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +52,8 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     MatInputModule,
     MatTableModule,
+    MatCardModule,
+    MatDividerModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore())
