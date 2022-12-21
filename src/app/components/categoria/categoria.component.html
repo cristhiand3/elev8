@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="formCategoria" #formDirective="ngForm" (ngSubmit)="guardar()">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre Categoría" [(ngModel)]="categoria.nombre" formControlName="nombre">
+                </div>
+                <div class="mb-3 text-center">
+                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-striped mb-3">
+                <thead>
+                    <th style="width:'94%'" class="fs-5">Nombre</th>
+                    <th colspan="2" class="fs-5">Opciones</th>
+                </thead>
+                <tbody *ngFor="let element of categoriaList">
+                    <td class="fs-5">{{element.nombre}}</td>
+                    <td class="text-center"><button type="button" class="btn btn-outline-warning" style="padding: 3px;" (click)="editar(element)"><i class="fa-solid fa-pencil-square"></i></button></td>
+                    <td class="text-center"><button type="button" class="btn btn-outline-danger" style="padding: 3px;" (click)="borrar(element)"><i class="fa-solid fa-trash"></i></button></td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
