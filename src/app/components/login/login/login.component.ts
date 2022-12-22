@@ -53,4 +53,15 @@ export class LoginComponent {
       });
   }
 
+  onFacebookLogin() {
+    this.service.facebook_login().then((response) => {
+      if(response == undefined){
+        this.errorLogin = true;
+      }else{
+        this.router.navigate(['/aplicacion']);
+      }
+      })
+      .catch((error) => console.error(error));
+  }
+
 }
