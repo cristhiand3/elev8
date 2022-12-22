@@ -8,7 +8,10 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./principal.component.css']
 })
 export class PrincipalComponent {
+  username ?: String;
+
   constructor(private userService: UsersService, private router: Router){
+    this.username = this.userService.get_user()?.displayName || 'Invitado';
 
   }
 

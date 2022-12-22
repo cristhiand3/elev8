@@ -1,8 +1,12 @@
 <mat-toolbar>
     <span>Control de Presupuesto</span>
-    <button mat-icon-button class="logout-icon" matTooltip="Salir" (click)="salir()">
-        <mat-icon>logout</mat-icon>
-    </button>
+    <div style="float:right; margin-left:auto; ">
+        <span>{{username}}</span>
+        <button mat-icon-button class="logout-icon" matTooltip="Salir" (click)="salir()">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </div>
+    
 </mat-toolbar>
 <mat-tab-group>
     <mat-tab label="Presupuesto"><br><app-presupuesto></app-presupuesto></mat-tab>

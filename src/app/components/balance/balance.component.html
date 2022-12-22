@@ -2,20 +2,23 @@
 
     <div class="card">
         <div class="card-body">
-            <table class="table table-striped mb-3">
+            <table id="balance" class="table table-striped mb-3">
                 <tbody *ngFor="let element of presupuestoList">
                     <th class="fs-5">Presupuesto</th>
-                    <td class="fs-5 text-right">{{element.monto | currency}}</td>
+                    <td class="fs-5 text-right" style="text-align:right;padding-right: 10em;">$ {{ pad(element.monto,15)}}</td>
                 </tbody>
                 <tbody *ngFor="let element of gastoList">
                     <td class="fs-5">Gasto {{element.nombre}}</td>
-                    <td class="fs-5 text-right">{{element.valor | currency}}</td>
+                    <td class="fs-5 text-right" style="text-align:right;padding-right: 10em;">$ {{ pad(element.valor,15)}}</td>
                 </tbody>
                 <tfoot>
                     <th class="fs-5">TOTAL:</th>
-                    <th class="fs-5">{{total | currency}}</th>
+                    <th class="fs-5" style="text-align:right;padding-right: 10em;">$ {{ pad(total,15)}}</th>
                 </tfoot>
             </table>
         </div>
+    </div>
+    <div style="padding-top: 20px;">
+        <button class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="downloadPDF()">Download PDF</button>
     </div>
 </div>
