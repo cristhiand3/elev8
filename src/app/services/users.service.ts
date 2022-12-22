@@ -12,7 +12,7 @@ export class UsersService {
   register({ email, password }: any) {
     return createUserWithEmailAndPassword(this.auth, email, password)
       .then((userCredentials) => {
-        // console.log( `Successful registration with credentials: ${JSON.stringify(userCredentials)}` );
+        return userCredentials;
       })
       .catch((error) => console.error(error));
   }
@@ -20,7 +20,7 @@ export class UsersService {
   login({ email, password }: any) {
     return signInWithEmailAndPassword(this.auth, email, password)
       .then((userCredentials) => {
-        // console.log( `Successful login with credentials: ${JSON.stringify(userCredentials)}` );
+        return userCredentials;
       })
       .catch((error) => {
         console.error(error);
@@ -63,8 +63,5 @@ export class UsersService {
   facebook_login() {
     return signInWithPopup(this.auth, new FacebookAuthProvider());
   }
-
-
-
 
 }

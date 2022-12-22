@@ -44,5 +44,16 @@ export class RegisterComponent implements OnInit {
       .catch((error) => console.error(error));
   }
 
+  onFacebookLogin() {
+    this.service.facebook_login().then((response) => {
+      if(response == undefined){
+        this.errorReg = true;
+      }else{
+        this.router.navigate(['/aplicacion']);
+      }
+      })
+      .catch((error) => console.error(error));
+  }
+
 
 }
